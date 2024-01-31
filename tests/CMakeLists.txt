@@ -22,8 +22,12 @@ target_link_libraries(qladisp ${Amp1394_LIBRARIES} ${Amp1394_EXTRA_LIBRARIES}
 add_executable(qlatest qlatest.cpp)
 target_link_libraries(qlatest ${Amp1394_LIBRARIES} ${Amp1394_EXTRA_LIBRARIES}
                               ${Amp1394Console_LIBRARIES} ${Amp1394Console_EXTRA_LIBRARIES})
+                              
+add_executable(ethernet_client ethernet_client.cpp)
+target_link_libraries(ethernet_client ${Amp1394_LIBRARIES} ${Amp1394_EXTRA_LIBRARIES}
+                              ${Amp1394Console_LIBRARIES} ${Amp1394Console_EXTRA_LIBRARIES})
 
-install (TARGETS qladisp qlatest
+install (TARGETS qladisp qlatest ethernet_client
          COMPONENT Amp1394-utils
          RUNTIME DESTINATION bin)
 
